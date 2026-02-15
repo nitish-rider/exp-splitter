@@ -96,4 +96,4 @@ jobs:
           echo "✅ Database migrations: Done"
           echo "✅ Build: Done"
           echo "✅ Deploy: Done"
-          echo "🌐 Your app should be live at: https://splitter.pages.dev"
+          echo "🌐 Your app should be live at: https://exp-splitter.pages.dev"

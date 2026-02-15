@@ -41,6 +41,7 @@ Welcome to the Household Expense Tracker documentation!
 |----------|-------------|
 | [CLOUDFLARE_FIX.md](./CLOUDFLARE_FIX.md) | Fixes "Missing entry-point" error |
 | [PAGES_DEPLOY_FIX.md](./PAGES_DEPLOY_FIX.md) | Fixes Pages deployment command |
+| [WRANGLER_CONFIG_FIX.md](./WRANGLER_CONFIG_FIX.md) | Fixes wrangler.toml warnings |
 | [PNPM_FIX.md](./PNPM_FIX.md) | Lockfile issues resolved |
 | [BALANCE_FIX.md](./BALANCE_FIX.md) | Balance calculation corrections |
 | [OAUTH_FIX_NOTES.md](./OAUTH_FIX_NOTES.md) | Discord OAuth fixes |

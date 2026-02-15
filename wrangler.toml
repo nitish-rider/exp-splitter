@@ -7,11 +7,3 @@ pages_build_output_dir = ".vercel/output/static"
 binding = "DB"
 database_name = "splitter-db"
 database_id = "20ff0272-84d9-437d-a22e-eef139876137"
-
-# Compatibility flags for Next.js
-compatibility_flags = ["nodejs_compat"]
-
-# Local development configuration
-[env.development]
-
-directory = "./.next"

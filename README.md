@@ -2,6 +2,8 @@
 
 A modern, collaborative expense tracking application built with Next.js and deployed on Cloudflare Pages with D1 database.
 
+> **🎉 READY TO DEPLOY!** See [FINAL_DEPLOYMENT_STATUS.md](./FINAL_DEPLOYMENT_STATUS.md) for complete status.
+
 ## ✨ Features
 
 - 🔐 **Discord OAuth Authentication** - Secure login with Discord

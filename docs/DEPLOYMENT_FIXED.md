@@ -24,7 +24,8 @@ Your project is now ready to deploy to Cloudflare Pages with zero errors!
 - Changed to `wrangler pages deploy` command
 - Removed GitHub Action that used Workers commands
 - Updated package.json deploy script
-- See: [PAGES_DEPLOY_FIX.md](./PAGES_DEPLOY_FIX.md)
+- Fixed wrangler.toml configuration
+- See: [PAGES_DEPLOY_FIX.md](./PAGES_DEPLOY_FIX.md) and [WRANGLER_CONFIG_FIX.md](./WRANGLER_CONFIG_FIX.md)
 
 ### 4. ⚠️ Deprecated Package Warning
 **Status:** Non-blocking
