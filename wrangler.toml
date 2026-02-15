@@ -1,0 +1,11 @@
+name = "splitter"
+compatibility_date = "2024-01-01"
+
+# D1 Database Configuration
+[[d1_databases]]
+binding = "DB"
+database_name = "splitter-db"
+database_id = "20ff0272-84d9-437d-a22e-eef139876137"
+
+# Local development configuration
+[env.development]
