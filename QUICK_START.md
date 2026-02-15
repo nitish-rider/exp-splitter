@@ -71,9 +71,9 @@ You should see: `users`, `groups`, `expenses`, etc.
 1. Go to Cloudflare Dashboard → Pages → Create a project
 2. Connect to GitHub → Select your repository
 3. Build settings:
-   - Framework: Next.js
-   - Build command: `npm run build`
-   - Build output: `.next`
+   - Framework: Next.js (Experimental)
+   - Build command: `npx @cloudflare/next-on-pages`
+   - Build output: `.vercel/output/static`
 4. Click "Save and Deploy" (will fail - that's OK!)
 
 5. Go to Settings → Environment variables → Add:

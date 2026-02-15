@@ -80,9 +80,9 @@ npx wrangler d1 execute splitter-db --remote --command="SELECT name FROM sqlite_
 3. Connect to your GitHub repository
 4. Select your repository
 5. Configure build settings:
-   - **Framework preset**: Next.js
-   - **Build command**: `npm run build`
-   - **Build output directory**: `.next`
+   - **Framework preset**: Next.js (Experimental)
+   - **Build command**: `npx @cloudflare/next-on-pages`
+   - **Build output directory**: `.vercel/output/static`
    - **Root directory**: `/` (leave empty if repo root)
 
 6. Click "Save and Deploy" (it will fail first time - that's OK!)

@@ -17,30 +17,38 @@ A modern, collaborative expense tracking application built with Next.js and depl
 ## 🚀 Quick Deploy to Cloudflare
 
 ```bash
-# 1. Check readiness
+# 1. Install dependencies (includes Cloudflare adapter)
+npm install
+
+# 2. Check readiness
 npm run deploy:check
 
-# 2. Login to Cloudflare
+# 3. Login to Cloudflare
 npm run cf:login
 
-# 3. Create database
+# 4. Create database
 npm run db:create
 
-# 4. Update wrangler.toml with your database_id
+# 5. Update wrangler.toml with your database_id
 
-# 5. Run migrations
+# 6. Run migrations
 npm run db:migrate:remote
 
-# 6. Push to GitHub (triggers auto-deployment)
+# 7. Build for Cloudflare
+npm run pages:build
+
+# 8. Push to GitHub (triggers auto-deployment)
 git push origin main
 ```
 
-See **[QUICK_START.md](./QUICK_START.md)** for detailed 15-minute deployment guide.
+See **[INSTALL_AND_DEPLOY.md](./INSTALL_AND_DEPLOY.md)** for complete step-by-step guide.
 
 ## 📚 Documentation
 
+- **[INSTALL_AND_DEPLOY.md](./INSTALL_AND_DEPLOY.md)** - Complete step-by-step guide (START HERE!)
+- **[CLOUDFLARE_FIX.md](./CLOUDFLARE_FIX.md)** - Fixes "Missing entry-point" error
 - **[QUICK_START.md](./QUICK_START.md)** - Fast deployment guide (15 min)
-- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Complete deployment guide (detailed)
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Detailed deployment guide
 - **[DEPLOYMENT_SUMMARY.md](./DEPLOYMENT_SUMMARY.md)** - Commands reference
 
 ## 🛠️ Tech Stack
@@ -76,7 +84,9 @@ Visit http://localhost:3000
 
 ```bash
 npm run dev              # Start development server
-npm run build            # Build for production
+npm run build            # Build Next.js (for Node.js)
+npm run pages:build      # Build for Cloudflare Pages
+npm run preview          # Test with Cloudflare dev server
 npm run start            # Start production server
 npm run lint             # Run ESLint
 
@@ -89,7 +99,7 @@ npm run db:remote        # Initialize remote database
 
 # Deployment
 npm run deploy:check     # Check deployment readiness
-npm run deploy:pages     # Manual deploy to Cloudflare Pages
+npm run deploy:pages     # Build and deploy to Cloudflare Pages
 npm run cf:login         # Login to Cloudflare
 ```
 
