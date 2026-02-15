@@ -61,8 +61,8 @@ jobs:
           echo "📊 Verifying database tables..."
           npx wrangler d1 execute splitter-db --remote --command="SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;"
 
-      - name: Build Next.js application
-        run: npm run build
+      - name: Build Next.js application for Cloudflare
+        run: npm run pages:build
         env:
           NODE_ENV: production
 
@@ -72,7 +72,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: splitter
-          directory: .next
+          directory: .vercel/output/static
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           wranglerVersion: '3'
 

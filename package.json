@@ -6,6 +6,8 @@
     "dev": "next dev",
     "dev:network": "next dev --hostname 0.0.0.0",
     "build": "next build",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "npm run pages:build && wrangler pages dev",
     "start": "next start",
     "lint": "eslint .",
     "db:local": "wrangler d1 execute splitter-db --local --file=scripts/init-db.sql",
@@ -13,7 +15,7 @@
     "db:migrate:local": "./scripts/run-migrations.sh local",
     "db:migrate:remote": "./scripts/run-migrations.sh remote",
     "db:create": "wrangler d1 create splitter-db",
-    "deploy:pages": "npm run build && wrangler pages deploy .next",
+    "deploy:pages": "npm run pages:build && wrangler pages deploy .vercel/output/static",
     "deploy:check": "./scripts/check-deployment-ready.sh",
     "cf:login": "wrangler login"
   },
@@ -70,6 +72,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.5",
     "@cloudflare/workers-types": "^4.20250115.0",
     "@tailwindcss/postcss": "^4.1.13",
     "@types/better-sqlite3": "^7.6.12",
@@ -80,6 +83,7 @@
     "postcss": "^8.5",
     "tailwindcss": "^3.4.17",
     "typescript": "5.7.3",
+    "vercel": "^37.24.1",
     "wrangler": "^3.101.0"
   }
 }
