@@ -56,6 +56,7 @@ See **[INSTALL_AND_DEPLOY.md](./docs/INSTALL_AND_DEPLOY.md)** for complete step-
 
 ### Fixes & Troubleshooting
 - **[CLOUDFLARE_FIX.md](./docs/CLOUDFLARE_FIX.md)** - Fixes "Missing entry-point" error
+- **[PAGES_DEPLOY_FIX.md](./docs/PAGES_DEPLOY_FIX.md)** - Fixes Pages deployment command
 - **[PNPM_FIX.md](./docs/PNPM_FIX.md)** - Lockfile issues fixed
 - **[BALANCE_FIX.md](./docs/BALANCE_FIX.md)** - Balance calculation fix
 - **[OAUTH_FIX_NOTES.md](./docs/OAUTH_FIX_NOTES.md)** - Authentication fixes

@@ -10,20 +10,29 @@ Your project is now ready to deploy to Cloudflare Pages with zero errors!
 **Fixed by:** Adding `@cloudflare/next-on-pages` adapter
 - Converts Next.js to Cloudflare Workers format
 - Output: `.vercel/output/static` with `_worker.js`
+- See: [CLOUDFLARE_FIX.md](./CLOUDFLARE_FIX.md)
 
 ### 2. ❌ "Cannot install with frozen-lockfile"
 **Fixed by:** 
 - Removed invalid `vercel` version dependency
 - Regenerated `pnpm-lock.yaml`
 - Updated GitHub Actions to use pnpm
+- See: [PNPM_FIX.md](./PNPM_FIX.md)
 
-### 3. ⚠️ Deprecated Package Warning
+### 3. ❌ "Workers-specific command in Pages project"
+**Fixed by:**
+- Changed to `wrangler pages deploy` command
+- Removed GitHub Action that used Workers commands
+- Updated package.json deploy script
+- See: [PAGES_DEPLOY_FIX.md](./PAGES_DEPLOY_FIX.md)
+
+### 4. ⚠️ Deprecated Package Warning
 **Status:** Non-blocking
 - `@cloudflare/next-on-pages` is deprecated
 - Still works perfectly
 - Future: Consider OpenNext adapter
 
-### 4. ⚠️ Next.js 16 Compatibility
+### 5. ⚠️ Next.js 16 Compatibility
 **Status:** Non-blocking
 - You have Next.js 16.1.6
 - Adapter supports up to 15.5.2
@@ -38,7 +47,7 @@ Your project is now ready to deploy to Cloudflare Pages with zero errors!
 ```bash
 # 1. Commit all changes
 git add .
-git commit -m "Fix Cloudflare deployment - ready for production"
+git commit -m "Fix all deployment issues - ready for production"
 
 # 2. Push to trigger auto-deployment
 git push origin main
@@ -60,6 +69,7 @@ Make sure you've completed:
 - [x] ✅ pnpm-lock.yaml updated (done)
 - [x] ✅ GitHub Actions configured for pnpm (done)
 - [x] ✅ Build script working (done)
+- [x] ✅ Pages deploy command fixed (done)
 - [ ] ⏳ D1 database created (`pnpm run db:create`)
 - [ ] ⏳ wrangler.toml updated with database_id
 - [ ] ⏳ Migrations run (`pnpm run db:migrate:remote`)
@@ -181,7 +191,7 @@ GitHub Actions automatically:
 4. ✅ Runs `pnpm install --frozen-lockfile`
 5. ✅ Executes database migrations
 6. ✅ Builds with `pnpm run pages:build`
-7. ✅ Deploys to Cloudflare Pages
+7. ✅ Deploys with `wrangler pages deploy`
 8. ✅ App goes live automatically
 
 Zero manual work! 🎊
@@ -211,10 +221,11 @@ WARN Issues with peer dependencies
 ## 📚 Documentation
 
 - **[INSTALL_AND_DEPLOY.md](./INSTALL_AND_DEPLOY.md)** - Complete setup guide
+- **[PAGES_DEPLOY_FIX.md](./PAGES_DEPLOY_FIX.md)** - Deploy command fix
 - **[PNPM_FIX.md](./PNPM_FIX.md)** - Lockfile fix details
 - **[CLOUDFLARE_FIX.md](./CLOUDFLARE_FIX.md)** - Entry-point fix details
 - **[QUICK_START.md](./QUICK_START.md)** - 15-minute deployment
-- **[README.md](./README.md)** - Project overview
+- **[README.md](../README.md)** - Project overview
 
 ---
 
@@ -224,6 +235,7 @@ All technical issues are resolved! Your project:
 
 - ✅ Builds successfully with Cloudflare adapter
 - ✅ Uses pnpm with up-to-date lockfile
+- ✅ Has correct Pages deployment command
 - ✅ Has GitHub Actions configured
 - ✅ Supports automated database migrations
 - ✅ Is production-ready

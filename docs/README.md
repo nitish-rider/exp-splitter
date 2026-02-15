@@ -40,6 +40,7 @@ Welcome to the Household Expense Tracker documentation!
 | Document | Description |
 |----------|-------------|
 | [CLOUDFLARE_FIX.md](./CLOUDFLARE_FIX.md) | Fixes "Missing entry-point" error |
+| [PAGES_DEPLOY_FIX.md](./PAGES_DEPLOY_FIX.md) | Fixes Pages deployment command |
 | [PNPM_FIX.md](./PNPM_FIX.md) | Lockfile issues resolved |
 | [BALANCE_FIX.md](./BALANCE_FIX.md) | Balance calculation corrections |
 | [OAUTH_FIX_NOTES.md](./OAUTH_FIX_NOTES.md) | Discord OAuth fixes |
@@ -74,6 +75,7 @@ Welcome to the Household Expense Tracker documentation!
 
 ### Troubleshooting
 - **Build errors?** → [CLOUDFLARE_FIX.md](./CLOUDFLARE_FIX.md)
+- **Deploy errors?** → [PAGES_DEPLOY_FIX.md](./PAGES_DEPLOY_FIX.md)
 - **Lockfile issues?** → [PNPM_FIX.md](./PNPM_FIX.md)
 - **Balance problems?** → [BALANCE_FIX.md](./BALANCE_FIX.md)
 - **OAuth errors?** → [OAUTH_FIX_NOTES.md](./OAUTH_FIX_NOTES.md)
