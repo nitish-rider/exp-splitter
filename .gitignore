@@ -20,3 +20,11 @@ node_modules/
 # Environment file backups
 .env.local.backup
 .env.network
+
+# Cloudflare
+.wrangler/
+wrangler.toml.backup
+
+# Backups
+*.backup
+*.sql.backup

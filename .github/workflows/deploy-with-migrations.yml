@@ -1,0 +1,85 @@
+name: Deploy with Database Migrations
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Cloudflare Pages with DB Migrations
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Setup Wrangler
+        run: npm install -g wrangler
+
+      - name: Run database migrations
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          echo "🚀 Starting database migration process..."
+          
+          # Run init schema
+          echo "📋 Running initial schema migration..."
+          npx wrangler d1 execute splitter-db --remote --file=./scripts/init-db.sql
+          
+          # Check if additional migrations exist and run them
+          if [ -f "./scripts/add-categories-migration.sql" ]; then
+            echo "📋 Running categories migration..."
+            npx wrangler d1 execute splitter-db --remote --file=./scripts/add-categories-migration.sql
+          fi
+          
+          # Add more migrations here as needed
+          # Example pattern:
+          # if [ -f "./scripts/migration-YYYYMMDD-description.sql" ]; then
+          #   echo "📋 Running migration-YYYYMMDD-description..."
+          #   npx wrangler d1 execute splitter-db --remote --file=./scripts/migration-YYYYMMDD-description.sql
+          # fi
+          
+          echo "✅ Database migrations completed successfully!"
+
+      - name: Verify database schema
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          echo "📊 Verifying database tables..."
+          npx wrangler d1 execute splitter-db --remote --command="SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;"
+
+      - name: Build Next.js application
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: splitter
+          directory: .next
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          wranglerVersion: '3'
+
+      - name: Deployment summary
+        run: |
+          echo "🎉 Deployment completed successfully!"
+          echo "✅ Database migrations: Done"
+          echo "✅ Build: Done"
+          echo "✅ Deploy: Done"
+          echo "🌐 Your app should be live at: https://splitter.pages.dev"

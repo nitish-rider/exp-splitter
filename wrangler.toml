@@ -9,3 +9,5 @@ database_id = "20ff0272-84d9-437d-a22e-eef139876137"
 
 # Local development configuration
 [env.development]
+
+directory = "./.next"

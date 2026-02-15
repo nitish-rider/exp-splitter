@@ -9,7 +9,13 @@
     "start": "next start",
     "lint": "eslint .",
     "db:local": "wrangler d1 execute splitter-db --local --file=scripts/init-db.sql",
-    "db:remote": "wrangler d1 execute splitter-db --remote --file=scripts/init-db.sql"
+    "db:remote": "wrangler d1 execute splitter-db --remote --file=scripts/init-db.sql",
+    "db:migrate:local": "./scripts/run-migrations.sh local",
+    "db:migrate:remote": "./scripts/run-migrations.sh remote",
+    "db:create": "wrangler d1 create splitter-db",
+    "deploy:pages": "npm run build && wrangler pages deploy .next",
+    "deploy:check": "./scripts/check-deployment-ready.sh",
+    "cf:login": "wrangler login"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
