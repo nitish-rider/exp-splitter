@@ -16,9 +16,11 @@ A modern, collaborative expense tracking application built with Next.js and depl
 
 ## 🚀 Quick Deploy to Cloudflare
 
+> **✅ All deployment issues fixed!** See [DEPLOYMENT_FIXED.md](./docs/DEPLOYMENT_FIXED.md)
+
 ```bash
 # 1. Install dependencies (includes Cloudflare adapter)
-npm install
+pnpm install
 
 # 2. Check readiness
 npm run deploy:check
@@ -41,15 +43,36 @@ npm run pages:build
 git push origin main
 ```
 
-See **[INSTALL_AND_DEPLOY.md](./INSTALL_AND_DEPLOY.md)** for complete step-by-step guide.
+See **[INSTALL_AND_DEPLOY.md](./docs/INSTALL_AND_DEPLOY.md)** for complete step-by-step guide.
 
 ## 📚 Documentation
 
-- **[INSTALL_AND_DEPLOY.md](./INSTALL_AND_DEPLOY.md)** - Complete step-by-step guide (START HERE!)
-- **[CLOUDFLARE_FIX.md](./CLOUDFLARE_FIX.md)** - Fixes "Missing entry-point" error
-- **[QUICK_START.md](./QUICK_START.md)** - Fast deployment guide (15 min)
-- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Detailed deployment guide
-- **[DEPLOYMENT_SUMMARY.md](./DEPLOYMENT_SUMMARY.md)** - Commands reference
+### Deployment Guides
+- **[INSTALL_AND_DEPLOY.md](./docs/INSTALL_AND_DEPLOY.md)** - Complete step-by-step guide (START HERE!)
+- **[DEPLOYMENT_FIXED.md](./docs/DEPLOYMENT_FIXED.md)** - All fixes summary
+- **[QUICK_START.md](./docs/QUICK_START.md)** - Fast deployment guide (15 min)
+- **[DEPLOYMENT.md](./docs/DEPLOYMENT.md)** - Detailed deployment guide
+- **[DEPLOYMENT_SUMMARY.md](./docs/DEPLOYMENT_SUMMARY.md)** - Commands reference
+
+### Fixes & Troubleshooting
+- **[CLOUDFLARE_FIX.md](./docs/CLOUDFLARE_FIX.md)** - Fixes "Missing entry-point" error
+- **[PNPM_FIX.md](./docs/PNPM_FIX.md)** - Lockfile issues fixed
+- **[BALANCE_FIX.md](./docs/BALANCE_FIX.md)** - Balance calculation fix
+- **[OAUTH_FIX_NOTES.md](./docs/OAUTH_FIX_NOTES.md)** - Authentication fixes
+
+### Features Documentation
+- **[REACT_QUERY_IMPLEMENTATION.md](./docs/REACT_QUERY_IMPLEMENTATION.md)** - React Query setup
+- **[EXPENSE_AUTO_UPDATE.md](./docs/EXPENSE_AUTO_UPDATE.md)** - Auto-update feature
+- **[SETTLE_UP_FEATURE.md](./docs/SETTLE_UP_FEATURE.md)** - Settlement system
+- **[CATEGORIES_FEATURE.md](./docs/CATEGORIES_FEATURE.md)** - Category management
+- **[ADD_MEMBER_FEATURE.md](./docs/ADD_MEMBER_FEATURE.md)** - Member management
+
+### Setup & Database
+- **[D1_IMPLEMENTATION.md](./docs/D1_IMPLEMENTATION.md)** - D1 database setup
+- **[RESET_DATABASE.md](./docs/RESET_DATABASE.md)** - Database reset guide
+- **[NETWORK_SETUP.md](./docs/NETWORK_SETUP.md)** - Network configuration
+
+See [docs/](./docs/) folder for all documentation.
 
 ## 🛠️ Tech Stack
 
@@ -64,8 +87,8 @@ See **[INSTALL_AND_DEPLOY.md](./INSTALL_AND_DEPLOY.md)** for complete step-by-st
 ## 🏃 Local Development
 
 ```bash
-# Install dependencies
-npm install
+# Install dependencies (using pnpm)
+pnpm install
 
 # Set up environment variables
 cp .env.example .env.local
