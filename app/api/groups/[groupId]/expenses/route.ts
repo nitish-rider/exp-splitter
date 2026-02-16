@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getDb, generateId, getCurrentTimestamp, type Expense } from '@/lib/db'
 
+export const runtime = 'edge';
+
 interface ExpenseWithUser extends Expense {
   paid_by_name: string
 }

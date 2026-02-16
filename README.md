@@ -2,7 +2,7 @@
 
 A modern, collaborative expense tracking application built with Next.js and deployed on Cloudflare Pages with D1 database.
 
-> **🎉 READY TO DEPLOY!** See [FINAL_DEPLOYMENT_STATUS.md](./FINAL_DEPLOYMENT_STATUS.md) for complete status.
+> **🎉 READY TO DEPLOY!** See [FINAL_DEPLOYMENT_STATUS.md](docs/FINAL_DEPLOYMENT_STATUS.md) for complete status.
 
 ## ✨ Features
 
@@ -58,6 +58,7 @@ See **[INSTALL_AND_DEPLOY.md](./docs/INSTALL_AND_DEPLOY.md)** for complete step-
 
 ### Fixes & Troubleshooting
 - **[CLOUDFLARE_FIX.md](./docs/CLOUDFLARE_FIX.md)** - Fixes "Missing entry-point" error
+- **[CLOUDFLARE_PAGES_BUILD_CONFIG.md](./docs/CLOUDFLARE_PAGES_BUILD_CONFIG.md)** - Correct build settings
 - **[PAGES_DEPLOY_FIX.md](./docs/PAGES_DEPLOY_FIX.md)** - Fixes Pages deployment command
 - **[PNPM_FIX.md](./docs/PNPM_FIX.md)** - Lockfile issues fixed
 - **[BALANCE_FIX.md](./docs/BALANCE_FIX.md)** - Balance calculation fix

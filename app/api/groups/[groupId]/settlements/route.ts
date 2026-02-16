@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getDb, generateId, getCurrentTimestamp, type Settlement } from '@/lib/db'
 
+export const runtime = 'edge';
+
 interface SettlementWithUsers extends Settlement {
   from_user_name: string
   to_user_name: string

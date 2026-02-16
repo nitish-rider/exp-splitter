@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getDb, generateId, getCurrentTimestamp, type User } from '@/lib/db'
 
+export const runtime = 'edge';
+
 /**
  * Get the base URL for redirects
  * Handles 0.0.0.0 hostname by using NEXTAUTH_URL or Host header
@@ -13,7 +15,9 @@ function getBaseUrl(request: NextRequest): string {
   
   // Use the Host header to construct URL
   const host = request.headers.get('host')
-  const protocol = request.headers.get('x-forwarded-proto') || 'http'
+  
+  // Cloudflare Pages always uses HTTPS, use http only for localhost
+  const protocol = host?.includes('localhost') ? 'http' : 'https'
   
   if (host) {
     return `${protocol}://${host}`

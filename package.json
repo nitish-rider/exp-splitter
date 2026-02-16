@@ -17,7 +17,10 @@
     "db:create": "wrangler d1 create splitter-db",
     "deploy:pages": "pnpm run pages:build && wrangler pages deploy .vercel/output/static --project-name=exp-splitter",
     "deploy:check": "./scripts/check-deployment-ready.sh",
-    "cf:login": "wrangler login"
+    "cf:login": "wrangler login",
+    "cf:secrets": "./scripts/setup-secrets.sh",
+    "cf:secrets:auto": "./scripts/setup-secrets-auto.sh",
+    "cf:setup": "./scripts/setup-d1-binding.sh"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

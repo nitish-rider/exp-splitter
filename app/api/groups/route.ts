@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getDb, generateId, getCurrentTimestamp, type Group } from '@/lib/db'
 
+export const runtime = 'edge';
+
 export async function GET(request: NextRequest) {
   try {
     const userId = request.cookies.get('user_session')?.value

@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+export const runtime = 'edge';
+
 // Mock authentication - Replace with actual OAuth implementation
 // For now, this stores user data in cookies
 
